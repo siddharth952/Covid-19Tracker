@@ -3,18 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		486A880AD0268D0889494309 /* Pods_CovidTracker_CovidTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB71C9D5A927A183D5DD609A /* Pods_CovidTracker_CovidTrackerUITests.framework */; };
+		54DC8227039EC614F83F8EC2 /* Pods_CovidTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0B802E30AC5D50E48EB581 /* Pods_CovidTracker.framework */; };
+		C0ECFAB4EEFFAE34F584BB62 /* Pods_CovidTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527AFB4E4BC6DA5B836710E5 /* Pods_CovidTrackerTests.framework */; };
+		E11A292B24448F5200A30092 /* GradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A292A24448F5200A30092 /* GradientColors.swift */; };
+		E176064B244248DA00F6FA2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E176064A244248DA00F6FA2E /* Assets.xcassets */; };
+		E176064E24424C0500F6FA2E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E176064D24424C0500F6FA2E /* Lottie */; };
+		E176065024424D2300F6FA2E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176064F24424D2300F6FA2E /* MainView.swift */; };
+		E19548BD24431E1A00F6DF55 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19548BC24431E1A00F6DF55 /* IntroView.swift */; };
+		E19548BF24431F7700F6DF55 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19548BE24431F7700F6DF55 /* LottieView.swift */; };
 		E1A93AAF2442325500A79C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A93AAE2442325500A79C23 /* AppDelegate.swift */; };
 		E1A93AB12442325600A79C23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A93AB02442325600A79C23 /* SceneDelegate.swift */; };
 		E1A93AB32442325600A79C23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A93AB22442325600A79C23 /* ContentView.swift */; };
-		E1A93AB52442325900A79C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A93AB42442325900A79C23 /* Assets.xcassets */; };
 		E1A93AB82442325900A79C23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A93AB72442325900A79C23 /* Preview Assets.xcassets */; };
 		E1A93ABB2442325900A79C23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A93AB92442325900A79C23 /* LaunchScreen.storyboard */; };
 		E1A93AC62442325900A79C23 /* CovidTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A93AC52442325900A79C23 /* CovidTrackerTests.swift */; };
 		E1A93AD12442325900A79C23 /* CovidTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A93AD02442325900A79C23 /* CovidTrackerUITests.swift */; };
+		E1F698762443219600658EFE /* shield_ani1.json in Resources */ = {isa = PBXBuildFile; fileRef = E1F698752443219600658EFE /* shield_ani1.json */; };
+		E1F698792443235500658EFE /* ShieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F698782443235500658EFE /* ShieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +45,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B0B802E30AC5D50E48EB581 /* Pods_CovidTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36170A9E467A51D470604D29 /* Pods-CovidTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-CovidTrackerTests/Pods-CovidTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		527AFB4E4BC6DA5B836710E5 /* Pods_CovidTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		690ECEF29E532713FA72EECB /* Pods-CovidTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-CovidTrackerTests/Pods-CovidTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		6C921AD7EFFA95A740C1B912 /* Pods-CovidTracker-CovidTrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidTracker-CovidTrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-CovidTracker-CovidTrackerUITests/Pods-CovidTracker-CovidTrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		90E16C2E3AA867695C300800 /* Pods-CovidTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidTracker.debug.xcconfig"; path = "Target Support Files/Pods-CovidTracker/Pods-CovidTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		A155A4461C8280AE1D64751D /* Pods-CovidTracker-CovidTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidTracker-CovidTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-CovidTracker-CovidTrackerUITests/Pods-CovidTracker-CovidTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B34AF80CFDE1AAD515BE2330 /* Pods-CovidTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidTracker.release.xcconfig"; path = "Target Support Files/Pods-CovidTracker/Pods-CovidTracker.release.xcconfig"; sourceTree = "<group>"; };
+		E11A292A24448F5200A30092 /* GradientColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColors.swift; sourceTree = "<group>"; };
+		E176064A244248DA00F6FA2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E176064F24424D2300F6FA2E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E19548BC24431E1A00F6DF55 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		E19548BE24431F7700F6DF55 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		E1A93AAB2442325500A79C23 /* CovidTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A93AAE2442325500A79C23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A93AB02442325600A79C23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E1A93AB22442325600A79C23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E1A93AB42442325900A79C23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1A93AB72442325900A79C23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E1A93ABA2442325900A79C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1A93ABC2442325900A79C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +71,9 @@
 		E1A93ACC2442325900A79C23 /* CovidTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CovidTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A93AD02442325900A79C23 /* CovidTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidTrackerUITests.swift; sourceTree = "<group>"; };
 		E1A93AD22442325900A79C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F698752443219600658EFE /* shield_ani1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shield_ani1.json; sourceTree = "<group>"; };
+		E1F698782443235500658EFE /* ShieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldView.swift; sourceTree = "<group>"; };
+		FB71C9D5A927A183D5DD609A /* Pods_CovidTracker_CovidTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidTracker_CovidTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54DC8227039EC614F83F8EC2 /* Pods_CovidTracker.framework in Frameworks */,
+				E176064E24424C0500F6FA2E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0ECFAB4EEFFAE34F584BB62 /* Pods_CovidTrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +98,77 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486A880AD0268D0889494309 /* Pods_CovidTracker_CovidTrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7061E3B30E8968DE5219D64F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90E16C2E3AA867695C300800 /* Pods-CovidTracker.debug.xcconfig */,
+				B34AF80CFDE1AAD515BE2330 /* Pods-CovidTracker.release.xcconfig */,
+				A155A4461C8280AE1D64751D /* Pods-CovidTracker-CovidTrackerUITests.debug.xcconfig */,
+				6C921AD7EFFA95A740C1B912 /* Pods-CovidTracker-CovidTrackerUITests.release.xcconfig */,
+				36170A9E467A51D470604D29 /* Pods-CovidTrackerTests.debug.xcconfig */,
+				690ECEF29E532713FA72EECB /* Pods-CovidTrackerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A831ACB53C32AF83AC1341B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B0B802E30AC5D50E48EB581 /* Pods_CovidTracker.framework */,
+				FB71C9D5A927A183D5DD609A /* Pods_CovidTracker_CovidTrackerUITests.framework */,
+				527AFB4E4BC6DA5B836710E5 /* Pods_CovidTrackerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E11A292924448F3400A30092 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E11A292A24448F5200A30092 /* GradientColors.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E17606442442467A00F6FA2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E11A292924448F3400A30092 /* Extensions */,
+				E1F698772443234400658EFE /* Animations */,
+				E176064F24424D2300F6FA2E /* MainView.swift */,
+				E19548BC24431E1A00F6DF55 /* IntroView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E17606452442468400F6FA2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E17606462442468B00F6FA2E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E19548C02443210000F6DF55 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				E1F698752443219600658EFE /* shield_ani1.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		E1A93AA22442325500A79C23 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +176,8 @@
 				E1A93AC42442325900A79C23 /* CovidTrackerTests */,
 				E1A93ACF2442325900A79C23 /* CovidTrackerUITests */,
 				E1A93AAC2442325500A79C23 /* Products */,
+				7061E3B30E8968DE5219D64F /* Pods */,
+				A831ACB53C32AF83AC1341B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +194,14 @@
 		E1A93AAD2442325500A79C23 /* CovidTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E19548C02443210000F6DF55 /* Lottie */,
+				E17606462442468B00F6FA2E /* Networking */,
+				E17606452442468400F6FA2E /* Model */,
+				E17606442442467A00F6FA2E /* Views */,
 				E1A93AAE2442325500A79C23 /* AppDelegate.swift */,
+				E176064A244248DA00F6FA2E /* Assets.xcassets */,
 				E1A93AB02442325600A79C23 /* SceneDelegate.swift */,
 				E1A93AB22442325600A79C23 /* ContentView.swift */,
-				E1A93AB42442325900A79C23 /* Assets.xcassets */,
 				E1A93AB92442325900A79C23 /* LaunchScreen.storyboard */,
 				E1A93ABC2442325900A79C23 /* Info.plist */,
 				E1A93AB62442325900A79C23 /* Preview Content */,
@@ -136,6 +235,15 @@
 			path = CovidTrackerUITests;
 			sourceTree = "<group>";
 		};
+		E1F698772443234400658EFE /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E19548BE24431F7700F6DF55 /* LottieView.swift */,
+				E1F698782443235500658EFE /* ShieldView.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,15 +251,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1A93AD52442325900A79C23 /* Build configuration list for PBXNativeTarget "CovidTracker" */;
 			buildPhases = (
+				6293E302423DE03A4005038A /* [CP] Check Pods Manifest.lock */,
 				E1A93AA72442325500A79C23 /* Sources */,
 				E1A93AA82442325500A79C23 /* Frameworks */,
 				E1A93AA92442325500A79C23 /* Resources */,
+				204EBF80372883BDB883A676 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CovidTracker;
+			packageProductDependencies = (
+				E176064D24424C0500F6FA2E /* Lottie */,
+			);
 			productName = CovidTracker;
 			productReference = E1A93AAB2442325500A79C23 /* CovidTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +273,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1A93AD82442325900A79C23 /* Build configuration list for PBXNativeTarget "CovidTrackerTests" */;
 			buildPhases = (
+				9402D8E0A19BEFAE6E46113F /* [CP] Check Pods Manifest.lock */,
 				E1A93ABD2442325900A79C23 /* Sources */,
 				E1A93ABE2442325900A79C23 /* Frameworks */,
 				E1A93ABF2442325900A79C23 /* Resources */,
@@ -178,9 +292,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1A93ADB2442325900A79C23 /* Build configuration list for PBXNativeTarget "CovidTrackerUITests" */;
 			buildPhases = (
+				44D09F28A38134CA020CB5CE /* [CP] Check Pods Manifest.lock */,
 				E1A93AC82442325900A79C23 /* Sources */,
 				E1A93AC92442325900A79C23 /* Frameworks */,
 				E1A93ACA2442325900A79C23 /* Resources */,
+				30ECC5D877056D3C73E96F6B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,6 +340,9 @@
 				Base,
 			);
 			mainGroup = E1A93AA22442325500A79C23;
+			packageReferences = (
+				E176064C24424C0500F6FA2E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = E1A93AAC2442325500A79C23 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,8 +360,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A93ABB2442325900A79C23 /* LaunchScreen.storyboard in Resources */,
+				E1F698762443219600658EFE /* shield_ani1.json in Resources */,
+				E176064B244248DA00F6FA2E /* Assets.xcassets in Resources */,
 				E1A93AB82442325900A79C23 /* Preview Assets.xcassets in Resources */,
-				E1A93AB52442325900A79C23 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,14 +382,122 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		204EBF80372883BDB883A676 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CovidTracker/Pods-CovidTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CovidTracker/Pods-CovidTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CovidTracker/Pods-CovidTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30ECC5D877056D3C73E96F6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CovidTracker-CovidTrackerUITests/Pods-CovidTracker-CovidTrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CovidTracker-CovidTrackerUITests/Pods-CovidTracker-CovidTrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CovidTracker-CovidTrackerUITests/Pods-CovidTracker-CovidTrackerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44D09F28A38134CA020CB5CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CovidTracker-CovidTrackerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6293E302423DE03A4005038A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CovidTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9402D8E0A19BEFAE6E46113F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CovidTrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E1A93AA72442325500A79C23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E1A93AAF2442325500A79C23 /* AppDelegate.swift in Sources */,
+				E176065024424D2300F6FA2E /* MainView.swift in Sources */,
+				E19548BD24431E1A00F6DF55 /* IntroView.swift in Sources */,
 				E1A93AB12442325600A79C23 /* SceneDelegate.swift in Sources */,
 				E1A93AB32442325600A79C23 /* ContentView.swift in Sources */,
+				E1F698792443235500658EFE /* ShieldView.swift in Sources */,
+				E19548BF24431F7700F6DF55 /* LottieView.swift in Sources */,
+				E11A292B24448F5200A30092 /* GradientColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,9 +660,11 @@
 		};
 		E1A93AD62442325900A79C23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90E16C2E3AA867695C300800 /* Pods-CovidTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"CovidTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = 9F94YLNW6S;
 				ENABLE_PREVIEWS = YES;
@@ -452,9 +682,11 @@
 		};
 		E1A93AD72442325900A79C23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B34AF80CFDE1AAD515BE2330 /* Pods-CovidTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"CovidTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = 9F94YLNW6S;
 				ENABLE_PREVIEWS = YES;
@@ -472,6 +704,7 @@
 		};
 		E1A93AD92442325900A79C23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36170A9E467A51D470604D29 /* Pods-CovidTrackerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +727,7 @@
 		};
 		E1A93ADA2442325900A79C23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 690ECEF29E532713FA72EECB /* Pods-CovidTrackerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +750,7 @@
 		};
 		E1A93ADC2442325900A79C23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A155A4461C8280AE1D64751D /* Pods-CovidTracker-CovidTrackerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +771,7 @@
 		};
 		E1A93ADD2442325900A79C23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C921AD7EFFA95A740C1B912 /* Pods-CovidTracker-CovidTrackerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -594,6 +830,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E176064C24424C0500F6FA2E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E176064D24424C0500F6FA2E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E176064C24424C0500F6FA2E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E1A93AA32442325500A79C23 /* Project object */;
 }
