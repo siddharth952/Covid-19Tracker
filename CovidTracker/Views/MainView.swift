@@ -21,22 +21,34 @@ struct MainView: View {
     var body: some View {
         
         VStack {
-            TopDashboard()
+            ZStack {
+                TopDashboard().edgesIgnoringSafeArea(.top)
+                
+                VStack{
+                    HStack {
+                        CCard(cardTitle: "Confirmed", data: $noConfirmed)
+                        CCard(cardTitle: "Active", data: $noActive)
+                    }.padding()
+                    
+                    HStack {
+                        CCard(cardTitle: "Recovered", data: $noRecovered)
+                        CCard(cardTitle: "Deceased", data: $noDeceased)
+                    }.padding()
+                }.offset(y:220)
+                
+
+            }.onAppear(){
+                self.loadData()
+            }
             Spacer()
-            Text("\(noConfirmed)")
-            Text("\(noActive)")
-            Text("\(noRecovered)")
-            Text("\(noDeceased)")
-        }.onAppear(){
-            self.loadData()
         }
         
     }
     
     func loadData(){
         
-        var urlBase = "https://api.rootnet.in/covid19-in/stats/latest"
-        var result:CovidAPI_Response?
+        let urlBase = "https://api.rootnet.in/covid19-in/stats/latest"
+        
     
                 
             if let url = URL(string: urlBase) {
@@ -45,7 +57,7 @@ struct MainView: View {
                   if let data = data {
                     
                     do{
-                        var res = try JSONDecoder().decode(CovidAPI_Response.self, from: data)
+                        let res = try JSONDecoder().decode(CovidAPI_Response.self, from: data)
                         print(res.data.summary.total)
                         self.noConfirmed = res.data.summary.total
                         self.noActive = ((res.data.summary.total) - (res.data.summary.discharged))
@@ -84,12 +96,12 @@ struct TopDashboard:View{
                 
             }
             
-        }.edgesIgnoringSafeArea(.top)
+        }
     }
 }
 
 
-struct monthCard:View {
+struct CCard:View {
     let cardTitle:String
     @Binding var data:Int
     var body: some View{
@@ -98,16 +110,17 @@ struct monthCard:View {
             
             HStack(alignment: .top) {
                 Text(cardTitle)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .fontWeight(.light)
-                    .font(.headline)
-                    .opacity(0.8)
+                    .font(.largeTitle)
+                    .opacity(0.9)
             }
+            Text("\(data)")
         }
         .padding(.top, -15)
-        .frame(width:50, height:65)
-        .background(Color("_Purple2"))
-        .cornerRadius(8)
+        .frame(width:180, height:150)
+        .background(Color(.white))
+        .cornerRadius(25)
         .opacity(0.90)
         .shadow(radius: 8)
         .animation(.spring())
