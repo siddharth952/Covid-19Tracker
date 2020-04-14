@@ -12,7 +12,7 @@ import Lottie
 let starAnimationView = AnimationView(name: "StarAnimation")
 
 struct MainView: View {
-    
+    @State var obj:CovidAPI_Response?
     
     @State var noConfirmed: Int = 0
     @State var noActive: Int = 0
@@ -41,6 +41,9 @@ struct MainView: View {
                 self.loadData()
             }
             Spacer()
+            StateWiseView()
+            
+            StateWiseViewCustom(state: (obj?.data.regional)?.description ?? "", c: 2, a: 2, r: 2, d: 2)
         }
         
     }
@@ -63,6 +66,8 @@ struct MainView: View {
                         self.noActive = ((res.data.summary.total) - (res.data.summary.discharged))
                         self.noRecovered = res.data.summary.discharged
                         self.noDeceased = res.data.summary.deaths
+                        
+                        self.obj = res
                     }catch let error{
                         print("Error while parsing JSON: \(error)")
                     }
