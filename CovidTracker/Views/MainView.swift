@@ -21,6 +21,8 @@ struct MainView: View {
     var body: some View {
         
         VStack {
+            TopDashboard()
+            Spacer()
             Text("\(noConfirmed)")
             Text("\(noActive)")
             Text("\(noRecovered)")
@@ -62,6 +64,58 @@ struct MainView: View {
     }
     
 }
+
+struct TopDashboard:View{
+    let gradient = Gradient(colors: [Color("Color1"), Color("Color2")])
+    
+    
+    
+    var body:some View{
+        VStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(LinearGradient(gradient: gradient, startPoint: .leading, endPoint: .topTrailing))
+                    .frame(width: 450, height: 250)
+                Image("Group6")
+                
+                VStack {
+                    LottieView(fileName: "prueba-doctores-freepik").frame(width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height/5).offset(y:40)
+                }
+                
+            }
+            
+        }.edgesIgnoringSafeArea(.top)
+    }
+}
+
+
+struct monthCard:View {
+    let cardTitle:String
+    @Binding var data:Int
+    var body: some View{
+        
+        VStack() {
+            
+            HStack(alignment: .top) {
+                Text(cardTitle)
+                    .foregroundColor(.white)
+                    .fontWeight(.light)
+                    .font(.headline)
+                    .opacity(0.8)
+            }
+        }
+        .padding(.top, -15)
+        .frame(width:50, height:65)
+        .background(Color("_Purple2"))
+        .cornerRadius(8)
+        .opacity(0.90)
+        .shadow(radius: 8)
+        .animation(.spring())
+    }
+    
+}
+
+
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {

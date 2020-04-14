@@ -11,6 +11,7 @@
 		54DC8227039EC614F83F8EC2 /* Pods_CovidTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0B802E30AC5D50E48EB581 /* Pods_CovidTracker.framework */; };
 		C0ECFAB4EEFFAE34F584BB62 /* Pods_CovidTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527AFB4E4BC6DA5B836710E5 /* Pods_CovidTrackerTests.framework */; };
 		E11A292B24448F5200A30092 /* GradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A292A24448F5200A30092 /* GradientColors.swift */; };
+		E146ABF524462785005F725F /* prueba-doctores-freepik.json in Resources */ = {isa = PBXBuildFile; fileRef = E146ABF424462785005F725F /* prueba-doctores-freepik.json */; };
 		E176064B244248DA00F6FA2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E176064A244248DA00F6FA2E /* Assets.xcassets */; };
 		E176064E24424C0500F6FA2E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E176064D24424C0500F6FA2E /* Lottie */; };
 		E176065024424D2300F6FA2E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176064F24424D2300F6FA2E /* MainView.swift */; };
@@ -57,6 +58,7 @@
 		A155A4461C8280AE1D64751D /* Pods-CovidTracker-CovidTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidTracker-CovidTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-CovidTracker-CovidTrackerUITests/Pods-CovidTracker-CovidTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B34AF80CFDE1AAD515BE2330 /* Pods-CovidTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidTracker.release.xcconfig"; path = "Target Support Files/Pods-CovidTracker/Pods-CovidTracker.release.xcconfig"; sourceTree = "<group>"; };
 		E11A292A24448F5200A30092 /* GradientColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColors.swift; sourceTree = "<group>"; };
+		E146ABF424462785005F725F /* prueba-doctores-freepik.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "prueba-doctores-freepik.json"; sourceTree = "<group>"; };
 		E176064A244248DA00F6FA2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E176064F24424D2300F6FA2E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E18B92E12444A7EC005A9C5C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				E1F698752443219600658EFE /* shield_ani1.json */,
+				E146ABF424462785005F725F /* prueba-doctores-freepik.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				E1F698762443219600658EFE /* shield_ani1.json in Resources */,
 				E176064B244248DA00F6FA2E /* Assets.xcassets in Resources */,
 				E1A93AB82442325900A79C23 /* Preview Assets.xcassets in Resources */,
+				E146ABF524462785005F725F /* prueba-doctores-freepik.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
