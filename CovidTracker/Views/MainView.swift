@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Lottie
+import SwiftUICharts
 
 let starAnimationView = AnimationView(name: "StarAnimation")
 
@@ -18,42 +19,72 @@ struct MainView: View {
     @State var noActive: Int = 0
     @State var noRecovered: Int = 0
     @State var noDeceased:Int = 0
+    @State var show:Bool = true
+    
     var body: some View {
         
-        VStack {
+        ScrollView(.vertical, showsIndicators: false) {
             ZStack {
-                TopDashboard().edgesIgnoringSafeArea(.top)
-                
-                VStack{
-                    HStack {
-                        CCard(cardTitle: "Confirmed", data: $noConfirmed)
-                        CCard(cardTitle: "Active", data: $noActive)
-                    }.padding()
+                LinearGradient(gradient: gradientBG, startPoint: .leading, endPoint: .topTrailing).edgesIgnoringSafeArea(.all)
+                VStack {
                     
-                    HStack {
-                        CCard(cardTitle: "Recovered", data: $noRecovered)
-                        CCard(cardTitle: "Deceased", data: $noDeceased)
-                    }.padding()
-                }.offset(y:220)
-                
+                        TopDashboard()
+                        
+                        VStack{
+                            
+                            HStack {
+                                if show{
+                                    CardShimmer(height: 220)
+                                    CardShimmer(height: 220)
+                                    
+                                }else{
+                                LineChartView(data: ([8,23,54,32,12,37,7,23,43]), title: "Confirmed", legend: "\(noConfirmed)",style: ChartStyle(backgroundColor: .white, accentColor: .red, gradientColor: GradientColors.prplPink, textColor: .black, legendTextColor: .red, dropShadowColor: .gray)).foregroundColor(.red)
+                                
+                                //CCard(cardTitle: "Active", data: $noActive)
+                              
+                                LineChartView(data: ([8,23,54,32,12,37,7,23,43]), title: "Active", legend: "\(noActive)",style: ChartStyle(backgroundColor: .white, accentColor: .blue, gradientColor: GradientColors.blue, textColor: .black, legendTextColor: .blue, dropShadowColor: .gray)).foregroundColor(.blue)
+                                
+                                }
+                            }.padding()
+                            
+                            HStack {
+                                if show{
+                                CardShimmer(height: 220)
+                                CardShimmer(height: 220)
+                                }else{
+                                //CCard(cardTitle: "Recovered", data: $noRecovered)
+                                LineChartView(data: ([8,23,54,32,12,37,7,23,43]), title: "Recovered", legend: "\(noRecovered)",style: ChartStyle(backgroundColor: .white, accentColor: .green, gradientColor: GradientColors.green, textColor: .black, legendTextColor: .green, dropShadowColor: .gray)).foregroundColor(.green)
+                                //CCard(cardTitle: "Deceased", data: $noDeceased)
+                                LineChartView(data: ([8,23,54,32,12,37,7,23,43]), title: "Deceased", legend: "\(noDeceased)",style: ChartStyle(backgroundColor: .white, accentColor: .gray, gradientColor: GradientColors.orange, textColor: .black, legendTextColor: .gray, dropShadowColor: .gray)).foregroundColor(.gray)
+                                }
+                            }.padding()
+                        }
 
-            }.onAppear(){
-                self.loadData()
+                    StateWiseView()
+                    if show{
+        
+                        ForEach(0...10,id: \.self){_ in
+        
+                            CardShimmer(height: 50)
+                        }
+                    }else{
+                        ForEach((obj?.data.regional)!, id: \.id) { region in
+                            StateWiseViewCustom(state: region.loc ?? "Testsccs", c: region.totalConfirmed, a: (region.totalConfirmed - region.discharged), r: region.discharged, d: region.deaths)
+                                   }
+                  
+                    }
+                }.onAppear(){
+                        self.loadData()
+                }
             }
-            Spacer()
-            StateWiseView()
-            
-            StateWiseViewCustom(state: (obj?.data.regional)?.description ?? "", c: 2, a: 2, r: 2, d: 2)
         }
+        
         
     }
     
     func loadData(){
         
         let urlBase = "https://api.rootnet.in/covid19-in/stats/latest"
-        
-    
-                
             if let url = URL(string: urlBase) {
             
                URLSession.shared.dataTask(with: url) { data, response, error in
@@ -68,6 +99,12 @@ struct MainView: View {
                         self.noDeceased = res.data.summary.deaths
                         
                         self.obj = res
+                        
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+                            self.show = false
+                        }
+                        
+                        
                     }catch let error{
                         print("Error while parsing JSON: \(error)")
                     }
@@ -77,23 +114,25 @@ struct MainView: View {
               //let task = URLSession.shared.dataTask(with: url, completionHandler: parseStateItemsFromData(data:response))
               //task.resume()
        
-        
     }
     
 }
 
 struct TopDashboard:View{
     let gradient = Gradient(colors: [Color("Color1"), Color("Color2")])
-    
-    
-    
+
     var body:some View{
         VStack {
             ZStack {
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(LinearGradient(gradient: gradient, startPoint: .leading, endPoint: .topTrailing))
-                    .frame(width: 450, height: 250)
+                RoundedRectangle(cornerRadius: 50, style: .continuous)
+                    .fill(Color(.white))
+                    .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height/4)
                 Image("Group6")
+                .scaledToFit()
+                    .frame(maxWidth: UIScreen.main.bounds.width,
+                           maxHeight: UIScreen.main.bounds.height)
+                    .shadow(radius: 10)
+                
                 
                 VStack {
                     LottieView(fileName: "prueba-doctores-freepik").frame(width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height/5).offset(y:40)
@@ -126,7 +165,7 @@ struct CCard:View {
         .frame(width:180, height:150)
         .background(Color(.white))
         .cornerRadius(25)
-        .opacity(0.90)
+        .opacity(0.95)
         .shadow(radius: 8)
         .animation(.spring())
     }

@@ -7,6 +7,6 @@
 //
 
 import Foundation
+import SwiftUI
 
-
-
+let gradientBG = Gradient(colors: [Color("Color1"), Color("Color2")])

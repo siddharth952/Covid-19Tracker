@@ -38,7 +38,7 @@ class CovidAPI_Response: Codable{
 
 class API_Data:Codable{
     var summary:Summary
-    var regional:[StateItem]?
+    var regional:[StateItem]
 }
 
 class Summary:Codable{
@@ -52,7 +52,7 @@ class Summary:Codable{
 }
 
 class StateItem:Codable{
-   // var uuid = UUID()
+    var id = UUID()
     
     var loc:String
     var confirmedCasesIndian:Int
@@ -62,14 +62,14 @@ class StateItem:Codable{
     var totalConfirmed:Int
     
     //for UUID and conform to protocol of codingkeys
-//    enum CodingKeys:String, CodingKey {
-//           case loc = "loc"
-//           case confirmedCasesIndian = "confirmedCasesIndian"
-//           case discharged = "discharged"
-//           case deaths = "deaths"
-//           case confirmedCasesForeign = "confirmedCasesForeign"
-//           case totalConfirmed = "totalConfirmed"
-//    }
+    enum CodingKeys:String, CodingKey {
+           case loc = "loc"
+           case confirmedCasesIndian = "confirmedCasesIndian"
+           case discharged = "discharged"
+           case deaths = "deaths"
+           case confirmedCasesForeign = "confirmedCasesForeign"
+           case totalConfirmed = "totalConfirmed"
+    }
     
     
 }
