@@ -10,9 +10,12 @@ import SwiftUI
 import Lottie
 import SwiftUICharts
 
+
 let starAnimationView = AnimationView(name: "StarAnimation")
 
 struct MainView: View {
+    
+    // Latest
     @State var obj:CovidAPI_Response?
     
     @State var noConfirmed: Int = 0
@@ -21,11 +24,18 @@ struct MainView: View {
     @State var noDeceased:Int = 0
     @State var show:Bool = true
     
+    // History
+    @State var noConfirmed_History:[Int] = []
+    @State var noActive_History:[Int] = []
+    @State var noRecovered_History:[Int] = []
+    @State var noDeceased_History:[Int] = []
+    @State var historyCounter:Int = 0
+    
+    
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
             ZStack {
-                LinearGradient(gradient: gradientBG, startPoint: .leading, endPoint: .topTrailing).edgesIgnoringSafeArea(.all)
                 VStack {
                     
                         TopDashboard()
@@ -38,11 +48,12 @@ struct MainView: View {
                                     CardShimmer(height: 220)
                                     
                                 }else{
-                                LineChartView(data: ([8,23,54,32,12,37,7,23,43]), title: "Confirmed", legend: "\(noConfirmed)",style: ChartStyle(backgroundColor: .white, accentColor: .red, gradientColor: GradientColors.prplPink, textColor: .black, legendTextColor: .red, dropShadowColor: .gray)).foregroundColor(.red)
+                                    LineChartView(data: ([Double(noConfirmed_History[historyCounter - 14]),Double(noConfirmed_History[historyCounter - 12]),Double(noConfirmed_History[historyCounter - 10]),Double(noConfirmed_History[historyCounter - 8]),Double(noConfirmed_History[historyCounter - 6]),Double(noConfirmed_History[historyCounter - 4]),Double(noConfirmed_History[historyCounter - 1])]), title: "Confirmed", legend: "\(noConfirmed)",style: ChartStyle(backgroundColor: .white, accentColor: .red, gradientColor: GradientColors.prplPink, textColor: .black, legendTextColor: .red, dropShadowColor: .gray)).foregroundColor(.red)
+                                    
                                 
                                 //CCard(cardTitle: "Active", data: $noActive)
                               
-                                LineChartView(data: ([8,23,54,32,12,37,7,23,43]), title: "Active", legend: "\(noActive)",style: ChartStyle(backgroundColor: .white, accentColor: .blue, gradientColor: GradientColors.blue, textColor: .black, legendTextColor: .blue, dropShadowColor: .gray)).foregroundColor(.blue)
+                                LineChartView(data: ([Double(noActive_History[historyCounter - 14]),Double(noActive_History[historyCounter - 12]),Double(noActive_History[historyCounter - 10]),Double(noActive_History[historyCounter - 8]),Double(noActive_History[historyCounter - 6]),Double(noActive_History[historyCounter - 4]),Double(noActive_History[historyCounter - 1])]), title: "Active", legend: "\(noActive)",style: ChartStyle(backgroundColor: .white, accentColor: .blue, gradientColor: GradientColors.blue, textColor: .black, legendTextColor: .blue, dropShadowColor: .gray)).foregroundColor(.blue)
                                 
                                 }
                             }.padding()
@@ -53,9 +64,9 @@ struct MainView: View {
                                 CardShimmer(height: 220)
                                 }else{
                                 //CCard(cardTitle: "Recovered", data: $noRecovered)
-                                LineChartView(data: ([8,23,54,32,12,37,7,23,43]), title: "Recovered", legend: "\(noRecovered)",style: ChartStyle(backgroundColor: .white, accentColor: .green, gradientColor: GradientColors.green, textColor: .black, legendTextColor: .green, dropShadowColor: .gray)).foregroundColor(.green)
+                                LineChartView(data: ([Double(noRecovered_History[historyCounter - 14]),Double(noRecovered_History[historyCounter - 12]),Double(noRecovered_History[historyCounter - 10]),Double(noRecovered_History[historyCounter - 8]),Double(noRecovered_History[historyCounter - 6]),Double(noRecovered_History[historyCounter - 4]),Double(noRecovered_History[historyCounter - 1])]), title: "Recovered", legend: "\(noRecovered)",style: ChartStyle(backgroundColor: .white, accentColor: .green, gradientColor: GradientColors.green, textColor: .black, legendTextColor: .green, dropShadowColor: .gray)).foregroundColor(.green)
                                 //CCard(cardTitle: "Deceased", data: $noDeceased)
-                                LineChartView(data: ([8,23,54,32,12,37,7,23,43]), title: "Deceased", legend: "\(noDeceased)",style: ChartStyle(backgroundColor: .white, accentColor: .gray, gradientColor: GradientColors.orange, textColor: .black, legendTextColor: .gray, dropShadowColor: .gray)).foregroundColor(.gray)
+                                LineChartView(data: ([Double(noDeceased_History[historyCounter - 14]),Double(noDeceased_History[historyCounter - 12]),Double(noDeceased_History[historyCounter - 10]),Double(noDeceased_History[historyCounter - 8]),Double(noDeceased_History[historyCounter - 6]),Double(noDeceased_History[historyCounter - 4]),Double(noDeceased_History[historyCounter - 1])]), title: "Deceased", legend: "\(noDeceased)",style: ChartStyle(backgroundColor: .white, accentColor: .gray, gradientColor: GradientColors.orange, textColor: .black, legendTextColor: .gray, dropShadowColor: .gray)).foregroundColor(.gray)
                                 }
                             }.padding()
                         }
@@ -68,21 +79,25 @@ struct MainView: View {
                             CardShimmer(height: 50)
                         }
                     }else{
+                       
                         ForEach((obj?.data.regional)!, id: \.id) { region in
-                            StateWiseViewCustom(state: region.loc ?? "Testsccs", c: region.totalConfirmed, a: (region.totalConfirmed - region.discharged), r: region.discharged, d: region.deaths)
+                            StateWiseViewCustom(state: region.loc , c: region.totalConfirmed, a: (region.totalConfirmed - region.discharged), r: region.discharged, d: region.deaths)
                                    }
                   
                     }
                 }.onAppear(){
-                        self.loadData()
+                        self.loadDataLatest()
+                    self.loadDataHistory()
                 }
             }
-        }
+        }.background(LinearGradient(gradient: gradientBG, startPoint: .leading, endPoint: .topTrailing).edgesIgnoringSafeArea(.all))
         
         
     }
     
-    func loadData(){
+    //MARK: Functions
+    
+    func loadDataLatest(){
         
         let urlBase = "https://api.rootnet.in/covid19-in/stats/latest"
             if let url = URL(string: urlBase) {
@@ -100,9 +115,9 @@ struct MainView: View {
                         
                         self.obj = res
                         
-                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-                            self.show = false
-                        }
+//                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+//                            self.show = false
+//                        }
                         
                         
                     }catch let error{
@@ -113,8 +128,41 @@ struct MainView: View {
             }
               //let task = URLSession.shared.dataTask(with: url, completionHandler: parseStateItemsFromData(data:response))
               //task.resume()
-       
     }
+    
+    
+    func loadDataHistory(){
+         
+         let urlBase = "https://api.rootnet.in/covid19-in/stats/history"
+             if let url = URL(string: urlBase) {
+             
+                URLSession.shared.dataTask(with: url) { data, response, error in
+                   if let data = data {
+                     
+                     do{
+                         let res = try JSONDecoder().decode(CovidAPI_Response_History.self, from: data)
+                        print(res.data[0].summary)
+                        // Update State Variables
+                        for element in res.data{
+                            self.noConfirmed_History.append(element.summary.total)
+                            self.noDeceased_History.append(element.summary.deaths)
+                            self.noActive_History.append(((element.summary.total) - (element.summary.discharged)))
+                            self.noRecovered_History.append(element.summary.discharged)
+                            self.historyCounter += 1
+                        }
+                         
+                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+                             self.show = false
+                         }
+                         
+                         
+                     }catch let error{
+                         print("Error while parsing JSON: \(error)")
+                     }
+                    }
+                }.resume()
+             }}
+    
     
 }
 
