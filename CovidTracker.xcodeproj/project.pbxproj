@@ -11,6 +11,7 @@
 		E146ABF524462785005F725F /* prueba-doctores-freepik.json in Resources */ = {isa = PBXBuildFile; fileRef = E146ABF424462785005F725F /* prueba-doctores-freepik.json */; };
 		E16F6F7E244F38DC0066BC19 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = E16F6F7D244F38DC0066BC19 /* SwiftUICharts */; };
 		E16F6F80244F55510066BC19 /* CovidAPI_Response_History.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16F6F7F244F55510066BC19 /* CovidAPI_Response_History.swift */; };
+		E16F6F82244F72780066BC19 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16F6F81244F72780066BC19 /* GraphView.swift */; };
 		E176064B244248DA00F6FA2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E176064A244248DA00F6FA2E /* Assets.xcassets */; };
 		E176064E24424C0500F6FA2E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E176064D24424C0500F6FA2E /* Lottie */; };
 		E176065024424D2300F6FA2E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176064F24424D2300F6FA2E /* MainView.swift */; };
@@ -52,6 +53,7 @@
 		E11A292A24448F5200A30092 /* GradientColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColors.swift; sourceTree = "<group>"; };
 		E146ABF424462785005F725F /* prueba-doctores-freepik.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "prueba-doctores-freepik.json"; sourceTree = "<group>"; };
 		E16F6F7F244F55510066BC19 /* CovidAPI_Response_History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidAPI_Response_History.swift; sourceTree = "<group>"; };
+		E16F6F81244F72780066BC19 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		E176064A244248DA00F6FA2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E176064F24424D2300F6FA2E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E18B92E12444A7EC005A9C5C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				E176064F24424D2300F6FA2E /* MainView.swift */,
 				E19548BC24431E1A00F6DF55 /* IntroView.swift */,
 				E18B92E52444B055005A9C5C /* StateWiseView.swift */,
+				E16F6F81244F72780066BC19 /* GraphView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				E19548BD24431E1A00F6DF55 /* IntroView.swift in Sources */,
 				E1A93AB12442325600A79C23 /* SceneDelegate.swift in Sources */,
 				E16F6F80244F55510066BC19 /* CovidAPI_Response_History.swift in Sources */,
+				E16F6F82244F72780066BC19 /* GraphView.swift in Sources */,
 				E1A93AB32442325600A79C23 /* ContentView.swift in Sources */,
 				E1F698792443235500658EFE /* ShieldView.swift in Sources */,
 				E19548BF24431F7700F6DF55 /* LottieView.swift in Sources */,

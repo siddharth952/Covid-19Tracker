@@ -7,13 +7,14 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct IntroView: View {
     @State var activateLink:Bool = false
     var body: some View {
         
         NavigationView {
-            NavigationLink(destination: MainView(),isActive: $activateLink) {
+            NavigationLink(destination: ContentView(),isActive: $activateLink) {
                 VStack{
                     ShieldView().offset(y: -120)
                     Spacer()

@@ -48,6 +48,7 @@ struct MainView: View {
                                     CardShimmer(height: 220)
                                     
                                 }else{
+                                    
                                     LineChartView(data: ([Double(noConfirmed_History[historyCounter - 14]),Double(noConfirmed_History[historyCounter - 12]),Double(noConfirmed_History[historyCounter - 10]),Double(noConfirmed_History[historyCounter - 8]),Double(noConfirmed_History[historyCounter - 6]),Double(noConfirmed_History[historyCounter - 4]),Double(noConfirmed_History[historyCounter - 1])]), title: "Confirmed", legend: "\(noConfirmed)",style: ChartStyle(backgroundColor: .white, accentColor: .red, gradientColor: GradientColors.prplPink, textColor: .black, legendTextColor: .red, dropShadowColor: .gray)).foregroundColor(.red)
                                     
                                 
@@ -149,6 +150,13 @@ struct MainView: View {
                             self.noActive_History.append(((element.summary.total) - (element.summary.discharged)))
                             self.noRecovered_History.append(element.summary.discharged)
                             self.historyCounter += 1
+                            
+                            // For GraphView
+                            noConfirmed_HistoryG.append(element.summary.total)
+                            noDeceased_HistoryG.append(element.summary.deaths)
+                            noActive_HistoryG.append(((element.summary.total) - (element.summary.discharged)))
+                            noRecovered_HistoryG.append(element.summary.discharged)
+                            historyCounterG = self.historyCounter
                         }
                          
                          DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
