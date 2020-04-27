@@ -8,7 +8,7 @@ Covid-19 Tracker for India built using SwiftUI.
 
 <p align="leading">
   <img src="CovidTracker/Preview Content/Screenshots/photo4.png" width="40%">
-  <img src="CovidTracker/Preview Content/Screenshots/photo5.png"width="40%">
+  <img src="CovidTracker/Preview Content/Screenshots/photo6.png"width="40%">
   <img src="CovidTracker/Preview Content/Screenshots/photo2.png"width="40%">
   <img src="CovidTracker/Preview Content/Screenshots/photo3.png"width="40%">
 </p>
