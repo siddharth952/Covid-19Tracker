@@ -39,7 +39,7 @@ struct MainView: View {
                 VStack {
                     
                         TopDashboard()
-                    SickCard(cardTitle: "5 Symptoms\nabout COVID-19",fWidth: UIScreen.main.bounds.width - 60,fHeight: UIScreen.main.bounds.height/5)
+                    SickCard(cardTitle: "5 Symptoms\nof COVID-19",fWidth: UIScreen.main.bounds.width - 60,fHeight: UIScreen.main.bounds.height/5)
                         
                         VStack{
                             
