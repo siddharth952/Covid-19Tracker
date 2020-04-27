@@ -18,6 +18,7 @@
 		E18B92E22444A7EC005A9C5C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18B92E12444A7EC005A9C5C /* NetworkManager.swift */; };
 		E18B92E42444A802005A9C5C /* CovidAPI_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18B92E32444A802005A9C5C /* CovidAPI_Response.swift */; };
 		E18B92E62444B055005A9C5C /* StateWiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18B92E52444B055005A9C5C /* StateWiseView.swift */; };
+		E19175E22456EB6A00B6E127 /* sick_person.json in Resources */ = {isa = PBXBuildFile; fileRef = E19175E12456EB6A00B6E127 /* sick_person.json */; };
 		E19548BD24431E1A00F6DF55 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19548BC24431E1A00F6DF55 /* IntroView.swift */; };
 		E19548BF24431F7700F6DF55 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19548BE24431F7700F6DF55 /* LottieView.swift */; };
 		E1A93AAF2442325500A79C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A93AAE2442325500A79C23 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		E18B92E12444A7EC005A9C5C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E18B92E32444A802005A9C5C /* CovidAPI_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidAPI_Response.swift; sourceTree = "<group>"; };
 		E18B92E52444B055005A9C5C /* StateWiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateWiseView.swift; sourceTree = "<group>"; };
+		E19175E12456EB6A00B6E127 /* sick_person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sick_person.json; sourceTree = "<group>"; };
 		E19548BC24431E1A00F6DF55 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		E19548BE24431F7700F6DF55 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		E1A93AAB2442325500A79C23 /* CovidTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 		E17606442442467A00F6FA2E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E1EEAE51245492AE0062C7B1 /* Map */,
 				E11A292924448F3400A30092 /* Extensions */,
 				E1F698772443234400658EFE /* Animations */,
 				E176064F24424D2300F6FA2E /* MainView.swift */,
@@ -156,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				E1F698752443219600658EFE /* shield_ani1.json */,
+				E19175E12456EB6A00B6E127 /* sick_person.json */,
 				E146ABF424462785005F725F /* prueba-doctores-freepik.json */,
 			);
 			path = Lottie;
@@ -224,6 +228,13 @@
 				E1A93AD22442325900A79C23 /* Info.plist */,
 			);
 			path = CovidTrackerUITests;
+			sourceTree = "<group>";
+		};
+		E1EEAE51245492AE0062C7B1 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		E1F698772443234400658EFE /* Animations */ = {
@@ -351,6 +362,7 @@
 				E1F698762443219600658EFE /* shield_ani1.json in Resources */,
 				E176064B244248DA00F6FA2E /* Assets.xcassets in Resources */,
 				E1A93AB82442325900A79C23 /* Preview Assets.xcassets in Resources */,
+				E19175E22456EB6A00B6E127 /* sick_person.json in Resources */,
 				E146ABF524462785005F725F /* prueba-doctores-freepik.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

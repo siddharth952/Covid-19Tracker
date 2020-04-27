@@ -39,6 +39,7 @@ struct MainView: View {
                 VStack {
                     
                         TopDashboard()
+                    SickCard(cardTitle: "5 Symptoms\nabout COVID-19",fWidth: UIScreen.main.bounds.width - 60,fHeight: UIScreen.main.bounds.height/5)
                         
                         VStack{
                             
@@ -201,32 +202,53 @@ struct TopDashboard:View{
 }
 
 
-struct CCard:View {
+struct SickCard:View {
     let cardTitle:String
-    @Binding var data:Int
+   //@Binding var data:Int
+    let fWidth:CGFloat?
+    let fHeight:CGFloat?
+    
+    let gradient = Gradient(colors: [Color("Color2"), Color("darkBlue")])
+    
     var body: some View{
         
         VStack() {
-            
-            HStack(alignment: .top) {
-                Text(cardTitle)
-                    .foregroundColor(.black)
-                    .fontWeight(.light)
-                    .font(.largeTitle)
-                    .opacity(0.9)
+        
+            ZStack(alignment: .trailing) {
+                HStack(alignment: .bottom) {
+                    Text(cardTitle)
+                        .foregroundColor(.white)
+                        .fontWeight(.semibold)
+                        .font(.title)
+                        .opacity(0.92)
+                        .offset(x:-60)
+                }
+                
+                LottieView(fileName: "sick_person").frame(width: 150, height: 150, alignment: .trailing).offset(x:80)
             }
-            Text("\(data)")
+           
+            Button(action: {
+                // Show view
+            }){
+                ZStack {
+                    Text("Learn more").fontWeight(.semibold).foregroundColor(.white)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous).frame(width: (UIScreen.main.bounds.width - 60)/3, height: 40, alignment: .leading).foregroundColor(.gray).opacity(0.5)
+                }
+            }
         }
         .padding(.top, -15)
-        .frame(width:180, height:150)
-        .background(Color(.white))
+        .frame(width:fWidth, height:fHeight)
+        .background(LinearGradient(gradient: gradient, startPoint: .leading, endPoint: .topTrailing))
         .cornerRadius(25)
-        .opacity(0.95)
         .shadow(radius: 8)
-        .animation(.spring())
+        //.animation(.spring())
     }
-    
 }
+
+
+
+
+
 
 
 

@@ -13,8 +13,6 @@ struct ShieldView: View {
     let gradient = Gradient(colors: [Color("Color1"), Color("Color2")])
 
     
-    
-    
     var body: some View {
         VStack {
             ZStack {
